@@ -1,0 +1,60 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JavaScript for Everyone:DOM</title>
+  </head>
+  <body>
+    <div class="wrapper">
+        <h1>Asabeneh Yetayeh challenges in 2020</h1>
+        <h2>30DaysOfJavaScript Challenge</h2>
+        <span class="date"></span>
+        <ul>
+            <li>30DaysOfPython Challenge Done</li>
+            <li>30DaysOfJavaScript Challenge Ongoing</li>
+            <li>30DaysOfReact Challenge Coming</li>
+            <li>30DaysOfFullStack Challenge Coming</li>
+            <li>30DaysOfDataAnalysis Challenge Coming</li>
+            <li>30DaysOfReactNative Challenge Coming</li>
+            <li>30DaysOfMachineLearning Challenge Coming</li>
+        </ul>
+    </div>
+
+    <script>
+        const year = document.querySelector('h1')
+        const textContent = year.textContent
+
+        
+
+        const yearHighlight = textContent.replace('2020', '<span class="highlight">2025</span>')
+        year.innerHTML = yearHighlight;
+
+        const date = document.querySelector('.date')
+        date.innerHTML = new Date()
+
+        setInterval(() => {
+            let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+            document.querySelector('.highlight').style.color = '#' + randomColor
+            console.log('sekunda')
+            date.innerHTML = new Date();
+            date.style.backgroundColor = '#' + randomColor
+        }, 1000)
+
+        const list  = document.querySelector('ul')
+        const listElements = list.querySelectorAll('li')
+        for(let i = 0; i < listElements.length; i++){
+            if(listElements[i].textContent.includes('Done') === true){
+                listElements[i].style.backgroundColor = 'green'; 
+            }   
+            else if(listElements[i].textContent.includes('Ongoing') === true){
+                listElements[i].style.backgroundColor = 'yellow'; 
+            }
+            else {
+                listElements[i].style.backgroundColor = 'red';
+            }
+        }
+
+
+    </script>
+  </body>
+</html>

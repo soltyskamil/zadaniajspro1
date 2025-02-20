@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="backgroundColor">
+        Change color
+    </button>
+    <span class="color">
+        Wylosowałeś/aś następujący kolor #FFFFFF 
+    </span>
+<script>
+    const buttonColor = document.querySelector('.backgroundColor');
+    const color = document.querySelector('.color');
+    buttonColor.addEventListener('click', () => {
+        let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+        color.innerHTML = `Wylosowałeś/aś następujący kolor ` + randomColor
+        document.body.style.backgroundColor = '#' + randomColor;
+        console.log(document.body.style)
+    }) 
+</script>
+</body>
+</html>

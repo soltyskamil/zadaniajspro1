@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    const paragraphs = `
+        <p id='paragraph1'>asdsadasd</p>
+        <p id='paragraph2'>asdsadasd1</p>
+        <p id='paragraph3'>asdsadasd2</p>
+        <p id='paragraph4'>asdsadasd2</p>
+    `
+document.body.innerHTML = paragraphs;
+const paragraph1 = document.querySelector('#paragraph1')
+const paragraph2 = document.querySelector('#paragraph2')
+const paragraph3 = document.querySelector('#paragraph3')
+const paragraph4 = document.querySelector('#paragraph4')
+
+const paragraphsTag = document.getElementsByTagName('p')
+
+for(let i = 0; i < paragraphsTag.length; i++){
+    console.log(paragraphsTag[i].textContent)
+}
+
+paragraph4.textContent = 'Fourth paragraph'
+
+for(let i = 0; i < paragraphsTag.length; i++){
+    paragraphsTag[i].setAttribute('class', 'title')
+    paragraphsTag[i].id += ' id'
+}
+
+paragraph1.style.color = 'red'
+paragraph2.style.backgroundColor = 'blue'
+paragraph3.style.fontSize = '2rem'
+paragraph4.style.fontFamily = 'Arial'
+
+for(let i = 0; i < paragraphsTag.length; i++){
+    if(i % 2 === 0) paragraphsTag[i].style.color = 'green';
+    else paragraphsTag[i].style.color = 'red';
+}
+
+for(let i = 0; i < paragraphsTag.length; i++){
+    paragraphsTag[i].textContent = `${i} paragraph`
+}
+
+
+</script>
+</body>
+</html>

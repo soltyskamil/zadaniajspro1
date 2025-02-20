@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+    </div>
+    <section id="container">
+        <ul>
+            <li class="first">student I</li>
+            <li class="second">student II</li>
+            <li class="third">student III</li>
+        </ul>
+        <ol>
+            <li class="first">student</li>
+            <li class="second">student</li>
+            <li class="third">student</li>
+        </ol>
+    </section>
+    <div class="footer">
+    </div>
+<script>
+    const containerId = document.getElementById('container')
+    const containerQuerry = document.querySelector('#container')
+    
+    const listSecond = document.querySelectorAll('.second')
+    
+    const olList = document.querySelector('ol')
+    const third = olList.querySelector('.third')
+    const olElements = olList.querySelectorAll('li')
+
+    console.log(containerId.innerText)
+    containerId.insertAdjacentHTML( 'beforeend', "Hello" );
+
+    const listElement = document.createElement('li')
+    const listNode = document.createTextNode('Hello')
+    listElement.appendChild(listNode)
+
+    olList.appendChild(listElement)
+
+    const footer = document.querySelector('.footer')
+    footer.remove()
+
+    console.log(olElements)
+
+    olElements.forEach((element) => {
+        if(listElement) console.log('jestem')
+        
+            console.log(element.style.color)
+            element.style.color = '#dbc110'
+        
+
+    })
+
+</script>
+</body>
+</html>
+
